@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { testData } from "./shared/temp"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./components/ui/Card"
-import { RadioGroup, RadioGroupItem } from "./components/ui/Radio-group"
-import { Label } from "./components/ui/Label"
-import { Button } from "./components/ui/Button"
-import { Progress } from "./components/ui/Progress"
+import { testData } from "../../shared/temp"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../components/ui/Card"
+import { RadioGroup, RadioGroupItem } from "../../components/ui/Radio-group"
+import { Label } from "../../components/ui/Label"
+import { Button } from "../../components/ui/Button"
+import { Progress } from "../../components/ui/Progress"
 
 export default function Test() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -59,8 +59,8 @@ export default function Test() {
     const currentQuestion = testData.questions[currentQuestionIndex]
   
     return (
-      <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-        <Card className="max-w-4xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 py-8 px-4 sm:px-6 lg:px-8">
+        <Card className="max-w-4xl mx-auto bg-white">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-center">{testData.test_theme}</CardTitle>
             <div className="flex justify-between items-center mt-4">
