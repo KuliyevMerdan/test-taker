@@ -12,7 +12,7 @@ export default function Layout() {
       <p className="text-xl text-center mb-12 text-gray-600 max-w-2xl">
         Aşakdakylaryň kömegi bilen test goşmagy ýa-da test geçmegi saýlap bilersiňiz.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-8 w-full max-w-4xl">
         <Card className="w-full bg-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center justify-center">
