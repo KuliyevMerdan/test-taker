@@ -7,271 +7,238 @@ i18next
     .use(initReactI18next)
     .init({
         debug: true,
-        fallbackLng: "en",
+        fallbackLng: "tkm",
         interpolation: {
             escapeValue: false,
         },
         resources: {
             en: {
                 translation: {
-                    tryAgain: "Try again",
-                    notification: {
-                        cartAdd: "Error adding to cart",
-                        cartRemove: "Error deleting cart item",
-                        orderCancelError: 'Error canceling order',
-                        locationFieldError: "Please specify your location!",
-                        orderMakeError: 'Error making order'
-                    },
-                    bigButton: {
-                        addToCart: 'Add to cart',
-                        goToCart: 'Go to cart',
-                        order: 'Order',
-                        continue: 'Continue',
-                        finishOrder: 'Finish order'
-                    },
-                    banner: {
-                        orderHistoryBtn: 'Order history',
-                        aboutUs: 'About us',
-                        productsBtn: 'Products',
-                        workDays: 'Work days',
-                        weekDays: {
-                            1: 'Monday',
-                            2: 'Tuesday',
-                            3: 'Wednesday',
-                            4: 'Thursday',
-                            5: 'Friday',
-                            6: 'Saturday',
-                            0: 'Sunday',
-                        },
-                        shopOpen: 'Open',
-                        shopClosed: 'Closed',
-                        withoutOff: 'No days off'
-                    },
                     home: {
-                        productsTitle: 'Our products',
-                        callButton: 'Call',
-                        msgButton: 'Message',
-                        locationButton: 'Location'
-                    },
-                    category: {
-                        all: 'All'
-                    },
-                    cart: {
-                        header: 'Cart',
-                        cartItem: {
-                            remove: 'Remove',
-                            quantity: 'qty',
-                            stockError: 'Not enough available',
-                            deleteModal: 'Delete cart item?'
+                        mainHeader: "Welcome to TestMaster!",
+                        mainDesc: "You can choose whether to pass or create a test with these buttons",
+                        upload: {
+                            header: "Upload test",
+                            firstDesc: "You need to create and upload test to pass it",
+                            secondDesc: "Everyone can create his own test with his own questions",
+                            button: "Upload"
+                        },
+                        pass: {
+                            header: "Pass test",
+                            firstDesc: "Take a test from created ones",
+                            secondDesc: "You will need to choose from added tests and pass it",
+                            button: "Begin testing"
                         }
                     },
-                    order: {
-                        header: 'Order Summary',
-                        products: 'Products',
-                        total: 'Total'
-                    },
-                    contact: {
-                        header: 'Contact Details',
-                        address: 'Address',
-                        comment: 'Comment',
-                        tip: 'Fill in the required information to place an order',
-                        orderMadePopup: 'Order sent! Our manager will soon contact with you'
-                    },
-                    ordersList: {
-                        header: 'Order List',
-                        emptyList: 'No orders yet',
-                        order: {
-                            orderId: 'Order ID',
-                            orderTotal: 'Order Total',
-                            orderDate: 'Order date',
-                            orderStatusField: 'Status',
-                            orderStatuses: {
-                                completed: 'Completed',
-                                pending: 'Pending',
-                                canceled: 'Canceled'
+                    upload: {
+                        header: "Create a new test",
+                        themeInput: {
+                            label: "Test theme",
+                            placeholder: "Enter the theme of your test"
+                        },
+                        timeInput: {
+                            label: "Test duration (in seconds)",
+                            placeholder: "Enter the duration of your test in seconds"
+                        },
+                        question: {
+                            header: "Question",
+                            textInput: {
+                                label: "Question text",
+                                placeholder: "Enter your question"
                             },
-                            cancelButton: 'Cancel order',
-                            cancelModal: {
-                                title: 'Do you want to cancel this order?',
-                                yes: 'Yes',
-                                no: 'No'
+                            answerInput: {
+                                label: "Answer variants (one per line)",
+                                placeholder: "Enter answer variants one per line"
+                            },
+                            indexInput: {
+                                label: "Correct answer index (0 based)",
                             }
+                        },
+                        addButton: "Add question",
+                        submitButton: "Submit Test",
+                        success: {
+                            header: "Test uploaded successfully!",
+                            description: "Your test has been created and is now available for others to take",
+                            button: "Return to Home"
+                        }
+                    },
+                    pass: {
+                        noTest: "There are no tests to pass",
+                        header: "Available tests",
+                        duration: "Duration",
+                        minutes: "minutes",
+                        questions: "Questions",
+                        button: "Start test"
+                    },
+                    test: {
+                        startModal: {
+                            header: {
+                                lable: "Your info",
+                                desc: "Fill out information about yourself"
+                            },
+                            usernameInput: {
+                                label: "Your name and surname",
+                                placeholder: "Enter your fullname"
+                            },
+                            specialtyInput: {
+                                label: "Your specialty",
+                                placeholder: "Enter your specialty at work or study"
+                            },
+                            button: "Start test"
                         }
                     }
                 }
             },
             ru: {
                 translation: {
-                    tryAgain: "Попробовать снова",
-                    notification: {
-                        cartAdd: "Ошибка добавления в корзину",
-                        cartRemove: "Ошибка удаления с корзины",
-                        orderCancelError: 'Ошибка отмены заказа',
-                        locationFieldError: "Укажите ваш адрес!",
-                        orderMakeError: 'Ошибка создания заказа'
-                    },
-                    bigButton: {
-                        addToCart: 'Добавить в корзину',
-                        goToCart: 'Корзина',
-                        order: 'Заказ',
-                        continue: 'Продолжить',
-                        finishOrder: 'Сделать заказ'
-                    },
-                    banner: {
-                        orderHistoryBtn: 'История заказов',
-                        aboutUs: 'Про нас',
-                        productsBtn: 'Продукты',
-                        workDays: 'Рабочие дни',
-                        weekDays: {
-                            1: 'Понедельник',
-                            2: 'Вторник',
-                            3: 'Среда',
-                            4: 'Четверг',
-                            5: 'Пятница',
-                            6: 'Суббота',
-                            0: 'Воскресенье',
-                        },
-                        shopOpen: 'Открыто',
-                        shopClosed: 'Закрыто',
-                        withoutOff: 'Без выходных'
-                    },
                     home: {
-                        productsTitle: 'Наши товары',
-                        callButton: 'Позвонить',
-                        msgButton: 'Написать',
-                        locationButton: 'Место'
-                    },
-                    category: {
-                        all: 'Все'
-                    },
-                    cart: {
-                        header: 'Корзина',
-                        cartItem: {
-                            remove: 'Удалить',
-                            quantity: 'Кол-во',
-                            stockError: 'Недостаточно в наличии',
-                            deleteModal: 'Убрать с корзины?'
+                        mainHeader: "Добро пожаловать в TestMaster!",
+                        mainDesc: "С помощью этих кнопок вы можете либо создать тест или пройти его",
+                        upload: {
+                            header: "Загрузить тест",
+                            firstDesc: "Чтобы сдавать тесты создайте его и загрузите",
+                            secondDesc: "Каждый может создавать свои тесты со своими вопросами",
+                            button: "Загрузить"
+                        },
+                        pass: {
+                            header: "Сдать тест",
+                            firstDesc: "Сдать из созданных",
+                            secondDesc: "Выберите из списка созданных тестов и сдайте его",
+                            button: "Начать тест"
                         }
                     },
-                    order: {
-                        header: 'Итоги заказа',
-                        products: 'Продукты',
-                        total: 'Итого'
-                    },
-                    contact: {
-                        header: 'Детали заказа',
-                        address: 'Ваш адрес',
-                        comment: 'Ваш комментарий',
-                        tip: 'Заполните нужные поля для завершения заказа',
-                        orderMadePopup: 'Заказ отправлен! Наш менеджер скоро свяжется с вами'
-                    },
-                    ordersList: {
-                        header: 'Список заказов',
-                        emptyList: 'Заказов пока нет',
-                        order: {
-                            orderId: 'Номер заказа',
-                            orderTotal: 'Сумма',
-                            orderDate: 'Дата',
-                            orderStatusField: 'Статус',
-                            orderStatuses: {
-                                completed: 'Завершен',
-                                pending: 'Ожидается',
-                                canceled: 'Отменен'
+                    upload: {
+                        header: "Создать новый тест",
+                        themeInput: {
+                            label: "Тема теста",
+                            placeholder: "Введите название теста"
+                        },
+                        timeInput: {
+                            label: "Длительность теста (в секундах)",
+                            placeholder: "Введите длительность теста в секундах"
+                        },
+                        question: {
+                            header: "Вопрос",
+                            textInput: {
+                                label: "Текст вопроса",
+                                placeholder: "Введите свой вопрос"
                             },
-                            cancelButton: 'Отменить заказ',
-                            cancelModal: {
-                                title: 'Хотите отменить этот заказ?',
-                                yes: 'Да',
-                                no: 'Нет'
+                            answerInput: {
+                                label: "Варианты ответов (1 ответ 1 линия)",
+                                placeholder: "Введите варианты ответов, по одному ответу на линию"
+                            },
+                            indexInput: {
+                                label: "Индекс правильного ответа (первый начинается с 0)",
                             }
+                        },
+                        addButton: "Добавить вопрос",
+                        submitButton: "Создать тест",
+                        success: {
+                            header: "Тест успешно создан!",
+                            description: "Ваш тест был загружен и теперь доступен чтобы его сдать",
+                            button: "Вернуться"
+                        }
+                    },
+                    pass: {
+                        noTest: "Нет загруженных тестов",
+                        header: "Доступные тесты",
+                        duration: "Продолжительность",
+                        minutes: "минут",
+                        questions: "Вопросы",
+                        button: "Начать тест"
+                    },
+                    test: {
+                        startModal: {
+                            header: {
+                                lable: "Ваша информация",
+                                desc: "Заполните информацию о себе"
+                            },
+                            usernameInput: {
+                                label: "Ваше имя и фамилия",
+                                placeholder: "Введите ваше полное имя"
+                            },
+                            specialtyInput: {
+                                label: "Ваша позиция",
+                                placeholder: "Введите название вашей позиции на учебе или работе"
+                            },
+                            button: "Начать тест"
                         }
                     }
                 }
             },
             tkm: {
                 translation: {
-                    tryAgain: "Täzeden synanyşmak",
-                    notification: {
-                        cartAdd: "Sebede goşup bolmady",
-                        cartRemove: "Sebetden pozup bolmady",
-                        orderCancelError: 'Sargydy goýbolsun edip bolmady',
-                        locationFieldError: "Salgyňyzy görkeziň!",
-                        orderMakeError: 'Sargyt döredip bolmady'
-                    },
-                    bigButton: {
-                        addToCart: 'Sebede goş',
-                        goToCart: 'Sebet',
-                        order: 'Sargyt et',
-                        continue: 'Dowam et',
-                        finishOrder: 'Sargydy ugratmak'
-                    },
-                    banner: {
-                        orderHistoryBtn: 'Sargytlar',
-                        aboutUs: 'Biz barada',
-                        productsBtn: 'Harytlar',
-                        workDays: 'Iş günleri',
-                        weekDays: {
-                            1: 'Duşenbe',
-                            2: 'Sişenbe',
-                            3: 'Çarşenbe',
-                            4: 'Penşenbe',
-                            5: 'Anna',
-                            6: 'Şenbe',
-                            0: 'Ýekşenbe',
-                        },
-                        shopOpen: 'Açyk',
-                        shopClosed: 'Ýapyk',
-                        withoutOff: 'Dynç güni ýok'
-                    },
                     home: {
-                        productsTitle: 'Biziň harytlarymyz',
-                        callButton: 'Jaň etmek',
-                        msgButton: 'Ýazmak',
-                        locationButton: 'Ýerleşýän ýeri'
-                    },
-                    category: {
-                        all: 'Hemmesi'
-                    },
-                    cart: {
-                        header: 'Sebet',
-                        cartItem: {
-                            remove: 'Pozmak',
-                            quantity: 'Muk-ry',
-                            stockError: 'Ammar ýeterlik däl',
-                            deleteModal: 'Sebetden aýyrmak?'
+                        mainHeader: "TestMaster hoş geldiňiz!",
+                        mainDesc: "Aşakdakylaryň kömegi bilen test goşmagy ýa-da test geçmegi saýlap bilersiňiz.",
+                        upload: {
+                            header: "Test ýükle",
+                            firstDesc: "Test tabşyrmak üçin gerekli görnüşinde ony dörediň we ýükläň",
+                            secondDesc: "Her kim öz testini öz soraglary bilen düzüp biler",
+                            button: "Ýüklemek"
                         },
+                        pass: {
+                            header: "Test tabşyrmak",
+                            firstDesc: "Goşulan testlerden tabşyrmak",
+                            secondDesc: "Sanawdaky testlerden birini saýlamak we şony tabşyrmak",
+                            button: "Testi başlamak"
+                        }
                     },
-                    order: {
-                        header: 'Sargydyň jemi',
-                        products: 'Harytlar',
-                        total: 'Jemi'
-                    },
-                    contact: {
-                        header: 'Sargydyň maglumatlary',
-                        address: 'Siziň salgyňyz',
-                        comment: 'Siziň belligiňiz',
-                        tip: 'Sargydy ugratmak üçin gerekli meýdanlary dolduryň',
-                        orderMadePopup: 'Sargyt ugrady! Ýakyn wagtda biz siz bilen habarlaşarys'
-                    },
-                    ordersList: {
-                        header: 'Sargytlar sanawy',
-                        emptyList: 'Entak sargyt ýok',
-                        order: {
-                            orderId: 'Sargyt belgisi',
-                            orderTotal: 'Jemi',
-                            orderDate: 'Wagty',
-                            orderStatusField: 'Ýagdaýy',
-                            orderStatuses: {
-                                completed: 'Ýerine ýetirildi',
-                                pending: 'Garaşylýar',
-                                canceled: 'Goýbolsun edildi'
+                    upload: {
+                        header: "Täze test döretmek",
+                        themeInput: {
+                            label: "Testiň temasy",
+                            placeholder: "Testiň temasyny giriziň"
+                        },
+                        timeInput: {
+                            label: "Testiň dowamlylygy (sekuntda)",
+                            placeholder: "Testiň dowamlylygyny sekuntda giriziň"
+                        },
+                        question: {
+                            header: "Sorag",
+                            textInput: {
+                                label: "Soragyň teksti",
+                                placeholder: "Öz soragyňyzy giriziň"
                             },
-                            cancelButton: 'Sargydy goýbolsun etmek',
-                            cancelModal: {
-                                title: 'Sargydy goýbolsun etmek isleýäňizmi?',
-                                yes: 'Howa',
-                                no: 'Ýok'
+                            answerInput: {
+                                label: "Soraglaryň görnüşleri (1 sorag 1 setir)",
+                                placeholder: "Her setirde bir wariantyny giriziň"
+                            },
+                            indexInput: {
+                                label: "Dogry jogabyň indeksi (birinji 0-dan başlaýar)",
                             }
+                        },
+                        addButton: "Добавить вопрос",
+                        submitButton: "Создать тест",
+                        success: {
+                            header: "Siziň testiňiz üstünlikli ýüklendi!",
+                            description: "Siziň testiňiz ýüklenildi we tabşyrmak üçin elýeterlidir",
+                            button: "Yza gaýtmak"
+                        }
+                    },
+                    pass: {
+                        noTest: "Elýeter test ýok",
+                        header: "Ýüklenen",
+                        duration: "Dowamlylygy",
+                        minutes: "minut",
+                        questions: "Soraglar",
+                        button: "Test başlamak"
+                    },
+                    test: {
+                        startModal: {
+                            header: {
+                                lable: "Özüňiz barada maglumat",
+                                desc: "Özüňiz barada maglumaty dolduryň"
+                            },
+                            usernameInput: {
+                                lable: "Siziň adyňyz we familiýaňyz",
+                                placeholder: "Doly adyňyzy giriziň"
+                            },
+                            specialtyInput: {
+                                lable: "Siziň hünäriňiz",
+                                placeholder: "Okuwdaky ýa-da işdäki hünäriňizi giriziň"
+                            },
+                            button: "Testi başlamak"
                         }
                     }
                 }

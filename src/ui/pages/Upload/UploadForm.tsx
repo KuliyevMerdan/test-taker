@@ -7,6 +7,7 @@ import { Button } from '../../components/ui/Button'
 import { useTestStore } from '../../shared/testStore'
 import { Textarea } from '../../components/ui/Textarea'
 import { Input } from '../../components/ui/Input'
+import { useTranslation } from 'react-i18next'
 
 interface Question {
   question_text: string
@@ -15,7 +16,8 @@ interface Question {
 }
 
 export function UploadForm() {
-    const { loadData } = useTestStore()
+    const { loadData } = useTestStore();
+    const { t } = useTranslation()
     const navigate = useNavigate()
     const [testTheme, setTestTheme] = useState('')
     const [testDuration, setTestDuration] = useState('')
@@ -63,23 +65,23 @@ export function UploadForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="test-theme">Test Theme</Label>
+            <Label htmlFor="test-theme">{t('upload.themeInput.label')}</Label>
             <Input
               id="test-theme"
               value={testTheme}
               onChange={(e) => setTestTheme(e.target.value)}
-              placeholder="Enter the theme of your test"
+              placeholder={t('upload.themeInput.placeholder')}
               required
             />
           </div>
           <div>
-            <Label htmlFor="test-duration">Test Duration (in seconds)</Label>
+            <Label htmlFor="test-duration">{t('upload.timeInput.label')}</Label>
             <Input
               id="test-duration"
               type="number"
               value={testDuration}
               onChange={(e) => setTestDuration(e.target.value)}
-              placeholder="Enter the duration of your test in seconds"
+              placeholder={t('upload.timeInput.placeholder')}
               required
             />
           </div>
@@ -89,7 +91,7 @@ export function UploadForm() {
           <Card key={index} className="p-4 bg-white">
             <CardContent className="space-y-4">
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold">Question {index + 1}</h3>
+                <h3 className="text-lg font-semibold">{t('upload.question.header')} {index + 1}</h3>
                 {index > 0 && (
                   <Button
                     type="button"
@@ -102,28 +104,28 @@ export function UploadForm() {
                 )}
               </div>
               <div>
-                <Label htmlFor={`question-${index}`}>Question Text</Label>
+                <Label htmlFor={`question-${index}`}>{t('upload.question.textInput.label')}</Label>
                 <Input
                   id={`question-${index}`}
                   value={question.question_text}
                   onChange={(e) => updateQuestion(index, 'question_text', e.target.value)}
-                  placeholder="Enter your question"
+                  placeholder={t('upload.question.textInput.placeholder')}
                   required
                 />
               </div>
               <div>
-                <Label htmlFor={`answers-${index}`}>Answer Variants (one per line)</Label>
+                <Label htmlFor={`answers-${index}`}>{t('upload.question.answerInput.label')}</Label>
                 <Textarea
                   id={`answers-${index}`}
                   value={question.answer_variants.join('\n')}
                   onChange={(e) => updateQuestion(index, 'answer_variants', e.target.value)}
-                  placeholder="Enter answer variants, one per line"
+                  placeholder={t('upload.question.answerInput.placeholder')}
                   rows={4}
                   required
                 />
               </div>
               <div>
-                <Label htmlFor={`correct-answer-${index}`}>Correct Answer Index (0-based)</Label>
+                <Label htmlFor={`correct-answer-${index}`}>{t('upload.question.indexInput.label')}</Label>
                 <Input
                   id={`correct-answer-${index}`}
                   type="number"
@@ -139,12 +141,12 @@ export function UploadForm() {
         ))}
 
         <Button type="button" onClick={addQuestion} className="w-full">
-          <PlusCircle className="mr-2 h-4 w-4" /> Add Question
+          <PlusCircle className="mr-2 h-4 w-4" /> {t('upload.addButton')}
         </Button>
 
-        <Button type="submit" className="w-full bg-green-500 hover:bg-green-500/80">Submit Test</Button>
+        <Button type="submit" className="w-full bg-green-500 hover:bg-green-500/80">{t('upload.submitButton')}</Button>
 
-        <Button className="w-full">Upload file</Button>
+        {/* <Button className="w-full">Upload file</Button> */}
       </form>
     )
 }

@@ -9,9 +9,14 @@ import * as Dialog from "@radix-ui/react-dialog";
 // import { IoClose } from "react-icons/io5";
 import "./Test.css";
 import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import { Input } from "../../components/ui/Input"
 
 export default function Test() {
+    const { t } = useTranslation()
     const navigate = useNavigate()
+    const [username, setUsername] = useState<any>()
+    const [specialty, setSpecialty] = useState<any>()
     const { current }: any = useTestStore()
     const [modal, setModal] = useState(false)
     const [started, setStarted] = useState(false)
@@ -57,7 +62,14 @@ export default function Test() {
         setCurrentQuestionIndex((prev) => prev - 1)
       }
     }
-  
+    
+    const handleStart = () => {
+      if(username !== '' && specialty !== ''){
+        setStarted(true)
+      } else {
+        console.log("Fill out")
+      }
+    }
     const handleSubmit = () => {
       // Implement submit logic here
       setFinished(true)
@@ -169,16 +181,46 @@ export default function Test() {
           >
             <Dialog.Portal>
               <Dialog.Content className="DialogContent">
-                <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+                <Dialog.Title className="DialogTitle text-center text-2xl">{t('test.startModal.header.lable')}</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
-                  Make changes to your profile here. Click save when you're done.
+                  {t('test.startModal.header.desc')}
                 </Dialog.Description>
                 <div
-                  style={{ display: "flex", marginTop: 25, justifyContent: "flex-end" }}
+                  style={{ display: "flex", marginTop: 25 }}
                 >
-                  <Button onClick={() => setStarted(true)}>
-                    Start
-                  </Button>
+                  <form onSubmit={() => { handleStart() }} className="space-y-4 w-full">
+                    <div className="space-y-4">
+                      <div>
+                        <Label htmlFor="username">{t('test.startModal.usernameInput.lable')}</Label>
+                        <Input
+                          id="username"
+                          // value={testTheme}
+                          onChange={(e) => setUsername(e.target.value)}
+                          placeholder={t('test.startModal.usernameInput.placeholder')}
+                          required
+                          className="w-full"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="specialty">{t('test.startModal.specialtyInput.lable')}</Label>
+                        <Input
+                          id="specialty"
+                          type="text"
+                          // value={testDuration}
+                          onChange={(e) => setSpecialty(e.target.value)}
+                          placeholder={t('test.startModal.specialtyInput.placeholder')}
+                          required
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-green-500 hover:bg-green-500/80"
+                    >
+                      {t('test.startModal.button')}
+                    </Button>
+                  </form>
                 </div>
               </Dialog.Content>
             </Dialog.Portal>
