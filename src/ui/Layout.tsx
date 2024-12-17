@@ -48,7 +48,7 @@ export default function Layout() {
           </CardContent>
           <CardFooter className="flex justify-center">
             <Button asChild>
-              <Link to={"/test"}>Testi başlamak</Link>
+              <Link to={"/testlist"}>Testi başlamak</Link>
             </Button>
           </CardFooter>
         </Card>

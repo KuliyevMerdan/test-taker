@@ -11,7 +11,7 @@ export default function UploadSuccessPage() {
         Your test has been created and is now available for others to take.
       </p>
       <div className="space-x-4">
-        <Button asChild variant="outline">
+        <Button asChild variant="default">
           <Link to={"/"}>Return to Home</Link>
         </Button>
       </div>
