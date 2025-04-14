@@ -156,15 +156,15 @@ export default function Test() {
           >
             <Dialog.Portal>
               <Dialog.Content className="DialogContent">
-                <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+                <Dialog.Title className="DialogTitle">{t('test.finishModal.header')}</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
-                  Make changes to your profile here. Click save when you're done.
+                  {t('test.finishModal.description')}
                 </Dialog.Description>
                 <div
                   style={{ display: "flex", marginTop: 25, justifyContent: "flex-end" }}
                 >
                   <Button onClick={() => navigate("/")}>
-                    Close
+                    {t('test.finishModal.close')}
                   </Button>
                 </div>
               </Dialog.Content>

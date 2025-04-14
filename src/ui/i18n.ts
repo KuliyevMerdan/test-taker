@@ -85,6 +85,11 @@ i18next
                                 placeholder: "Enter your specialty at work or study"
                             },
                             button: "Start test"
+                        },
+                        finishModal: {
+                            header: "Congratulations, test finished!",
+                            description: "Thanks for submitting your results",
+                            close: "Close"
                         }
                     }
                 }
@@ -162,6 +167,11 @@ i18next
                                 placeholder: "Введите название вашей позиции на учебе или работе"
                             },
                             button: "Начать тест"
+                        },
+                        finishModal: {
+                            header: "Поздравляю, тест закончен!",
+                            description: "Спасибо за ваши ответы",
+                            close: "Закрыть"
                         }
                     }
                 }
@@ -239,6 +249,11 @@ i18next
                                 placeholder: "Okuwdaky ýa-da işdäki hünäriňizi giriziň"
                             },
                             button: "Testi başlamak"
+                        },
+                        finishModal: {
+                            header: "Gutlaýarys, test gutardy!",
+                            description: "Beren jogaplaryňyz üçin sag boluň",
+                            close: "Ýapmak"
                         }
                     }
                 }
